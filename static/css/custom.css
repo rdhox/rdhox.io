@@ -1,0 +1,19 @@
+code {
+    background-color: transparent;
+    color: grey;
+}
+
+.avatar img{
+    width:200px;
+    height: auto;
+    border-radius: 50%;
+    border: solid black 1px;
+}
+
+.footer {
+  height: 6.0rem;
+  width: 100%;
+  text-align: center;
+  line-height: 2.0rem;
+  margin-bottom:20px;
+}
