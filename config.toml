@@ -1,4 +1,4 @@
-baseurl = "http://www.rdhox.io" # Hostname (and path) to the root.
+baseurl = "https://www.rdhox.io" # Hostname (and path) to the root.
 title = "${rdhox}" # Site title.
 theme = "coder" # Set the theme.
 languagecode = "en-us" # The site’s language code.
