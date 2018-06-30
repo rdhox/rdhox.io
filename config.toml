@@ -10,6 +10,8 @@ pygmentsstyle = "monokai" # Color-theme or style for syntax highlighting.
 pygmentscodefences = true # Enable code fence background highlighting.
 pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
 
+disqusShortname = "rdhox-io" # Enable or disable Disqus
+
 [params] # theme parameters
     author = "rdhox" # Author's name.
     info = "Jamstack believer - Front-end & serverless tech." # Author's job title or info.
