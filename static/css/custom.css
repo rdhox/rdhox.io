@@ -4,10 +4,16 @@ code {
 }
 
 .avatar img{
-    width:200px;
+    width: 200px;
     height: auto;
     border-radius: 50%;
     border: solid black 1px;
+}
+
+@media (max-width: 768px) {
+    .avatar img {
+        width: 100px; 
+    }
 }
 
 .footer {
