@@ -11,7 +11,7 @@ pygmentscodefences = true # Enable code fence background highlighting.
 pygmentscodefencesguesssyntax = true # Enable syntax guessing for code fences without specified language.
 
 disqusShortname = "rdhox-io" # Enable or disable Disqus
-googleAnalytics = "UA-121688632-1"
+googleAnalytics = "UA-121695487-1"
 
 [params] # theme parameters
     author = "rdhox" # Author's name.
