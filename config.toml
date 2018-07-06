@@ -18,10 +18,7 @@ googleAnalytics = "UA-121695487-1"
     info = "Jamstack believer - Front-end & serverless tech." # Author's job title or info.
     description = "Welcome to my personnal website! You'll find here some informations about my work and some articles on my blog. Don't hesitate to contact me or follow me on twitter if you wish!" # Site description.
     keywords = "blog,developer,personal,javascript,node,react,serverless,aws,freelance" # Site keywords.
-    avatar = true # display an avatar.
     avatarurl = "images/avatar.jpg" # if avatar = true, must contain the path of the avatar in the static folder. 
-
-    disqusShortname = "rdhox-io" # Enable or disable Disqus
 
     # Whether you want to hide copyright and credits in the footer.
     hideCredits = false
