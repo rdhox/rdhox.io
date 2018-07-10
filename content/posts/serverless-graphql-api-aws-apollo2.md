@@ -7,18 +7,18 @@ tags = ["serverless", "aws", "dynamodb", "amazon", "graphql", "apollo-server"]
 categories = ["backend", "serverless"]
 +++
 
-Okay, let's build an API with the help of the [serverless framework](http://www.serverless.com), GraphQL and Apollo Server 2, with a Dynamo database and AWS. We will build a table where users will be recorded, and lambda functions to create those users, to request informations from them, and update them. All that using a graphQL layer, and apollo-server-lambda to make our job easier.  
+Okay, let's build an API with the help of the [serverless framework](http://www.serverless.com), GraphQL and Apollo Server 2, with a Dynamo database and AWS. We will build a table where users will be recorded, and lambda functions to create those users, to request informations from them, and update them. All that using a graphQL layer, and apollo-server-lambda making our job easier.  
 
 
 You can find the final code [here](https://github.com/rdhox/graphql-api-with-aws-serverless-and-apollo2).
 
-Before anything to happen, we have to subscribe to AWS, to install serverless framework and to set-up AWS credentials.
-I let you subscibe to AWS, that simple enough. I assume that we have nodeJS and NPM installed, so install serverless:
+Before anything happens, we have to subscribe to AWS, to install serverless framework and to set-up AWS credentials.
+I will let you subscibe to AWS, that is simple enough. I assume that we have nodeJS and NPM installed, so let's install serverless:
 ```bash
 $ npm i -g serverless
 ```
 You can check this [video](https://www.youtube.com/watch?v=HSd9uYj2LJA) to set-up your credentials.
-I recommand you to follow the quick start if you're new to serverless framework => [here](https://serverless.com/framework/docs/providers/aws/guide/quick-start/).
+I recommend you to follow the quick start if you're new to serverless framework => [here](https://serverless.com/framework/docs/providers/aws/guide/quick-start/).
 First let's create a folder and install some packages :  
 ```bash
 $ mkdir api-graphql
@@ -90,16 +90,16 @@ functions:
           method: get
           cors: true
 ```
-Ok let's take 5 minutes to explain what we have here. The `serverless.yml` file is the place where we set-up our back-end environment. In this case, the AWS environment. It's a yaml syntax and we can use the CloudFormation syntax, which accept the yaml, for setting-up aws services, like dynamoDB. 
+Ok let's take 5 minutes to explain what we have here. The `serverless.yml` file is the place where we set-up our back-end environment. In this case, the AWS environment. It's a yaml syntax and we can use the CloudFormation syntax, which accepts the yaml, for setting-up aws services, like dynamoDB. 
 
 
-__The _provider_ object__ describe the back-end environment. Variables passed under `environment` are constants that we can find in our JS files with `process.env.YOUR_VARIABLE`. The `iamRoleStatements` is where we give permissions to our aws profile. Here we `Allow` some DynamoDB actions on a specific resource that is our table. `IAM` stands for 'Identity and Access Management'. We can create and set different profiles on our AWS console and be very specific about which profile is allowed to do specifics tasks, which lambda functions is allowed to access specifics resources, etc...  
+__The _provider_ object__ describes the back-end environment. Variables passed under `environment` are constants that we can find in our JS files with `process.env.YOUR_VARIABLE`. The `iamRoleStatements` is where we give permission to our aws profile. Here we `Allow` some DynamoDB actions on a specific resource that is our table. `IAM` stands for 'Identity and Access Management'. We can create and set different profiles on our AWS console and be very specific about which profile is allowed to do specifics tasks, which lambda functions is allowed to access specifics resources, etc...  
 
 
-__The _resources_ object__ set-up the dynamoDB table in this exemple. You can find how the syntax work [here](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html). NoSQL databases don't work like SQL databases (which make sense!). Here we define only the attribute `ID` (type String define by the `S`) of the table named `users-table-dev` which gonna be the Primary Key, define by `HASH`. But we are totally allowed to add in the future other attributes to our user item which is an instance of our user table. And items from our user table can have different attributes between each other. Like you see there is no rule, because the structure is not defined in advance. We are far from, for example the Symfony framework in PHP, where we define our tables attributes and generate our PHP classes with an ORM doing the link. It can be great, but it can be dangerously messy too. You'll find a lot to read about NoSQL database, but for starter, you can read [this nice introduction to DynamoDB](https://www.dynamodbguide.com/what-is-dynamo-db).  
+__The _resources_ object__ set-up the dynamoDB table in this example. You can find how the syntax works [here](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html). NoSQL databases don't work like SQL databases (which makes sense!). Here we define only the attribute `ID` (type String define by the `S`) of the table named `users-table-dev` which is going to be the Primary Key, defined by `HASH`. But we are totally allowed to add, in the future, other attributes to our user item which is an instance of our user table. And items from our user table can have different attributes between each other. As you can see there is no rule, because the structure is not defined in advance. We are far from, for example the Symfony framework in PHP, where we define our tables attributes and generate our PHP classes with an ORM doing the link. It can be great, but it can be dangerously messy too. You'll find a lot to read about NoSQL database, but for starters, you can read [this nice introduction to DynamoDB](https://www.dynamodbguide.com/what-is-dynamo-db).  
 
 
-Last part is __the _functions_ object__, where we define our lambda functions. We use only one entry point, which is our apollo server. The name of the function is 'graphql'. The handler, which is the local path where to find the function, is located in the `handler.js` file where we export the graphql function, which explain the `handler.graphql`. Protocol `http` is the way we trigger our function, and we can add some details, like the path in the url to use, the request method, etc...  
+The last part is __the _functions_ object__, where we define our lambda functions. We use only one entry point, which is our apollo server. The name of the function is 'graphql'. The handler, which is the local path where we find the function, is located in the `handler.js` file where we export the graphql function, which explains the `handler.graphql`. Protocol `http` is the way we trigger our function, and we can add some details, like the path in the url to use, the request method, etc...  
 
 <br />
 
@@ -250,16 +250,16 @@ const updateUser = (ID, country) => promisify(callback =>
 ```
 
 __promisify.js:__
-In version 10 of nodeJS, there is a function call promisify that transform functions into promises easily, which is very cool. AWS is not running nodeJS 10 yet, so we create and export our own promisify function.  
+In version 10 of nodeJS, there is a function called promisify that transforms functions into promises easily, which is very cool. AWS is not running nodeJS 10 yet, so we create and export our own promisify function.  
 
 __user.js:__
-We finally find the code that we are interested here. We can put everything into the `handler.js` file, but since your project is not gonna be as simple as a tutorial, it's good to see how we can organize ourself (and you can read [that](https://blog.apollographql.com/modularizing-your-graphql-schema-code-d7f71d5ed5f2) to learn more about structuring an apollo project). We can find the schema and the resolvers of the user at the start. With apollo-server our job is nicely simplified. The resolvers take promises where we use the aws-sdk library to manipulate our dynamoDB table.  
+We finally find the code that we are interested here. We can put everything into the `handler.js` file, but since your project is not goint to be as simple as a tutorial, it's good to see how we can organize ourselves (and you can read [this](https://blog.apollographql.com/modularizing-your-graphql-schema-code-d7f71d5ed5f2) to learn more about structuring an apollo project). We can find the schema and the resolvers of the user at the start. With apollo-server our job is nicely simplified. The resolvers take promises where we use the aws-sdk library to manipulate our dynamoDB table.  
 
 
-Little detail here, we can't ask dynamoDB to generate automatically a unique ID for our table, due to the nature of a NoSQL database. There are some solutions that you can find, here we simply hash the email with the crypto library of Node to get our ID, and we checked if the ID already exist in our table. If yes, an error is thrown, if no, everything's alright. This method is relatively basic, and may not work if you expand to different regions. Be warn.  
+A little detail here, we can't ask dynamoDB to generate automatically a unique ID for our table, due to the nature of a NoSQL database. There are some solutions that you can find, here we simply hash the email with the crypto library of Node to get our ID, and we checked if the ID already exists in our table. If yes, an error is thrown, if no, everything's alright. This method is relatively basic, and may not work if you expand to different regions. Be warned.  
 
 
-Now let the serverless framework do is magic:
+Now let the serverless framework do it's magic:
 ```bash
 $ sls deploy
 ```
@@ -273,10 +273,10 @@ $ sls deploy
 
 Once our project is deployed, serverless should give us the end-points of our functions. Here we got 2 identics urls, for post and get requests, in a form of `https://******.execute-api.us-east-1.amazonaws.com/dev/graphql`.  
 We can test our api directly with the curl command, or by going to our aws account in the API Gateway service. There we can see our end-points, see the functions attached and test them. It's very nice so we will do that.  
-By the way, the aws console is really something important that you have to understand if you want to use aws services. There really is a lot of stuff to see, lot of services, you can really be lost checking everything, but it's worth it.  
+By the way, the aws console is something important that you have to understand if you want to use AWS services. There really is a lot of stuff to see, lot of services, you can be lost checking everything, but it's worth it.  
 
 
-Ok I assume that you are in your API Gateway page. If nothing appeared, check that you are in the right region, here _us-east-1_.
+Ok I assume that you are in your API Gateway page. If nothing appear, check that you are in the right region, here _us-east-1_.
 Click on _dev-api-graphql_, _post_, and _test_. In the header text-area, put `Content-Type: application/json`. In the Request Body, paste :
 
 ```json
@@ -288,7 +288,7 @@ Click on _dev-api-graphql_, _post_, and _test_. In the header text-area, put `Co
 	}
 }
 ```
-I vividly encourage you to test your json with https://jsonlint.com/. It can save you a lot of time if you're like me and you're mistaken `:` with `=` and you passed the last 2 hours without noticing it... Anyway, click _Test_, and if the result look like :
+I vividly encourage you to test your json with https://jsonlint.com/. It can save you a lot of time if you're like me and you're mistaken `:` with `=` and you passed the last 2 hours without noticing it... Anyway, click _Test_, and if the result looks like this :
 
 ```json
 {
@@ -297,7 +297,7 @@ I vividly encourage you to test your json with https://jsonlint.com/. It can sav
   }
 }
 ```
-Well done, you created your first user! If you click again on _Test_, the result should be false this time because we can't create two user with the same email. We can go check your dynamoDB table on our aws console to see our item with our two attributes, ID and email. Let's try to get the email of the user:
+Well done, you created your first user! If you click again on _Test_, the result should be false this time because we can't create two users with the same email. We can go check your dynamoDB table on our aws console to see our item with our two attributes, ID and email. Let's try to get the email of the user:
 
 ```json
 {
@@ -350,9 +350,9 @@ And the response is:
 And our item has now a _country_ attribute.  
 
 
-Ok I let you find how we can delete this user, you should have the logic now!
+Ok I let you find out how we can delete this user, you should have the logic now!
 
-This method of building an API is not the best. Why? Because there is no communication between our graphQL schemas where we define our types and the functions where we interact with our tables. You always have to be careful about what you are doing with the data and what graphQL can do with it. Fortunately there is something call AWS AppSync that gonna make our job easier, and I plan to write about it soon!
+This method of building an API is not the best. Why? Because there is no communication between our graphQL schemas where we define our types and the functions where we interact with our tables. You always have to be careful about what you are doing with the data and what graphQL can do with it. Fortunately, there is something call AWS AppSync that is going to make our job easier, and I plan to write about it soon!
 
 
 
