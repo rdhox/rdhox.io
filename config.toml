@@ -42,6 +42,10 @@ googleAnalytics = "UA-121695487-1"
     name = "Twitter"
     weight = 2
     url = "https://twitter.com/rd_hox/"
+[[params.social]]
+    name = "RSS"
+    weight = 2
+    url = "https://rdhox.io/index.xml/"
 
 # Menu links
 [[menu.main]]
