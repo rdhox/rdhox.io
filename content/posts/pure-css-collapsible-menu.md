@@ -11,7 +11,7 @@ Sometimes it's good to return to the basics. With this post, no fancy new web te
 By hiding a html checkbox input and by playing with its css selector ':checked', you can have a click event and affect what's nested in the input's label. This way, you can for example, add a collapsible menu for mobile without any help of CSS frameworks or JavaScript.  
 
 
-Here a quick example:
+Here is a quick example:
 
 <iframe src="https://codesandbox.io/embed/lpmw53kr6m?fontsize=8" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
