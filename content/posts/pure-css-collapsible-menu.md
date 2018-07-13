@@ -7,7 +7,7 @@ tags = ["front-end", "css", "collapsible", "menu", "webdesign"]
 categories = ["front-end"]
 +++
 
-Sometimes it's good to return to the basic. With this post, no fancy new web technologies, just pure css and some html. I just discovered a nice css cheat, that maybe everybody knows since years but me, that I wanted to share with you.  
+Sometimes it's good to return to the basics. With this post, no fancy new web technologies, just pure css and some html. I just discovered a nice css cheat, that maybe everybody knows for years except me, that I wanted to share with you.  
 By hiding a html checkbox input and by playing with its css selector ':checked', you can have a click event and affect what's nested in the input's label. This way, you can for example, add a collapsible menu for mobile without any help of CSS frameworks or JavaScript.  
 
 
