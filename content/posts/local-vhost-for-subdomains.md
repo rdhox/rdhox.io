@@ -7,10 +7,10 @@ tags = ["node", "express", "vhost", "server", "domains", "subdomains"]
 categories = ["backend"]
 +++
 
-Developping web apps now is not what it was before, and it's a good thing. Not that W/L/X/AMP was such a pain to use (even if sometimes it was), now we just install some packages via npm, `npm start` and like magic you can start developping your app.  
-But with more complexe apps, using subdomains for example, you may have to set-up your own local server to handle the different urls. Or maybe you just don't want messy folders containing apps that all responded to `localhost:3000`, but different domains for each app, with one server to launch and the right url to put in your browser.
+Developing web apps now is not what it was before, and it's a good thing. Not that W/L/X/AMP was such a pain to use (even if sometimes it was), now we install some packages via npm, `npm start` and like magic you can start developing your app.  
+But with more complex apps, using subdomains for example, you may have to set-up your own local server to handle the different urls. Or maybe you don't want messy folders containing apps that all respond to `localhost:3000`, but you want different domains for each app, with one server to launch and the right url to put in your browser.
 
-We're going to see here how we can manage that. Let say we have this organisation :
+We're going to see here how we can manage that. Let's say we have this organization :
 
 -projects/
 : |--app1/
@@ -84,7 +84,7 @@ app.use(vhost('dashboard.app3.test', appDashboard));
 
 app.listen(4000);
 ```
-Ok pretty simple and short code. Note that we used the _.test_ as a TLD (Top Level Domain) since _.dev_ need to be access with https now, which is a pain honestly... But _.test_ does the job here. We also have to use a TLD for __*express*__ to parse correctly the url when we use subdomains.  
+Ok pretty simple and short code. Note that we used the _.test_ as a TLD (Top Level Domain) since _.dev_ needs to be accessed with https now, which is a pain honestly... But _.test_ does the job here. We also have to use a TLD for __*express*__ to parse correctly the url when we use subdomains.  
 Now we have to link the url of our vhost to our localhost. Let's edit our /etc/hosts file: 
 
 ```txt
@@ -95,7 +95,7 @@ Now we have to link the url of our vhost to our localhost. Let's edit our /etc/h
 127.0.0.1   dashboard.app3.test
 ```
 
-And, Well that's it. In the _projects_ directory, just open a terminal and launch the server `$ node server.js`.  
+And, Well that's it. In the _projects_ directory, open a terminal and launch the server `$ node server.js`.  
 Now you can access your apps by typing in your browser the right url with the port 4000:
 ```
 app1.test:4000
