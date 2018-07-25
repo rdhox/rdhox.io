@@ -30,6 +30,9 @@ googleAnalytics = "UA-121695487-1"
     # Custom CSS
     custom_css = ["css/custom.css"]
 
+    # Alignment of Mobile Menu items
+    itemscentered = true
+
     # RTL support
     rtl = false
 
