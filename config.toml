@@ -14,7 +14,7 @@ disqusShortname = "rdhox-io" # Enable or disable Disqus
 googleAnalytics = "UA-121695487-1"
 
 [params] # theme parameters
-    author = "rdhox" # Author's name.
+    author = "rdhox - Freelancer" # Author's name.
     info = "Front-end UI and Mobile Developer" # Author's job title or info.
     description = "Welcome to my personnal website! You'll find here some informations about my work and some articles on my blog. Don't hesitate to contact me or follow me on twitter if you wish!" # Site description.
     keywords = "blog,developer,personal,javascript,node,react,serverless,aws,freelance" # Site keywords.
