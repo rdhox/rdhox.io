@@ -1,9 +1,77 @@
-code {
-    background-color: #E0E0E0;
-    color: black;
-    line-height: 1.2em;
+body {
+    background-color: #34495e;
+    color: #EEEEEE;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 }
 
-.avatar img{
-    border: solid black 1px;
+.container {
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 100%;
+    padding-left: 2.0rem;
+    padding-right: 2.0rem;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Mono', monospace;
+    font-size: 1.6em;
+    font-weight: 400;
+    letter-spacing: 0.0625em;
+    line-height: 1.8em;
+    text-transform: uppercase;
+    color: #EEEEEE;
+}
+
+.centered .about h2 {
+    font-size: 1.4em;
+    line-height: 1.6em;
+    text-transform: none;
+}
+.list ul li a {
+    color: #EEEEEE;
+}
+.list ul li a:hover {
+    color: #FF8A65;
+}
+.navigation a {
+    color: #EEEEEE;
+}
+.navigation a:hover {
+    color: #FF8A65;
+}
+a {
+    color: #EEEEEE;
+}
+.footer a {
+    color: #EEEEEE;
+}
+a:hover {
+    color: #FF8A65;
+}
+.navigation .navigation-title {
+    text-transform: lowercase;
+}
+/* Icon social */
+.centered .about ul li a {
+    color: #EEEEEE;
+}
+.centered .about ul li a:hover {
+    color: #FF8A65;
+}
+/*  Menu mobile */
+.navigation .menu-button {
+    color: #EEEEEE;
+}
+.navigation .menu-button:hover {
+    color: #EEEEEE;
+}
+
+.navigation .navigation-list {
+    background-color: rgba(52,73,94 ,0.9);
+}
+
+code {
+    color:black;
+
+}
+
