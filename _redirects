@@ -1,5 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://rdhox.netlify.com/* https://rdhox.io/:splat 301!
-
-# These extra rules are required because HTTPS is not forced
-http://rdhox.netlify.com/* https://rdhox.io/:splat 301!
