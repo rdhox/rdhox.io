@@ -72,6 +72,9 @@ a:hover {
 
 code {
     color:black;
+}
 
+p a { 
+    text-decoration: underline;
 }
 
