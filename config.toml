@@ -52,8 +52,13 @@ googleAnalytics = "UA-121695487-1"
     url = "https://twitter.com/rd_hox/"
     icon = "fab fa-twitter"
 [[params.social]]
+    name = "Linkedin"
+    weight = 3
+    url = "https://www.linkedin.com/in/renauddechaux"
+    icon = "fab fa-linkedin"
+[[params.social]]
     name = "RSS"
-    weight = 2
+    weight = 4
     url = "https://rdhox.io/index.xml/"
     icon = "fa fa-rss-square"
 
