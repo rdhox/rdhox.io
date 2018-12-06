@@ -30,7 +30,7 @@ googleAnalytics = "UA-121695487-1"
     custom_css = ["css/custom.css"]
 
     # Add footer content
-    footercontent = "contact@rdhox.io"
+    footercontent = "contact(at)rdhox.io"
 
     # Custom CSS
 

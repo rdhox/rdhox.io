@@ -6,7 +6,7 @@ draft: false
 
 ---
 
-For projects, questions or anything else, contact me at contact.at.rdhox.io  
+For projects, questions or anything else, contact me at contact(at)rdhox.io  
 You can follow me on Twitter, [@rdhox](https://twitter.com/rd_hox/). I'm not a big user of social medias, but I try to push myself a little!
 
 ---
