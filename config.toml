@@ -18,7 +18,7 @@ googleAnalytics = "UA-121695487-1"
     info = "Front-end UI and Mobile Developer" # Author's job title or info.
     description = "Welcome to my personnal website! You'll find here some informations about my work and some articles on my blog. Don't hesitate to contact me or follow me on twitter if you wish!" # Site description.
     keywords = "blog,developer,personal,javascript,node,react,serverless,aws,freelance" # Site keywords.
-    avatarurl = "images/avatar.jpg" # if avatar = true, must contain the path of the avatar in the static folder. 
+    # avatarurl = "images/avatar.jpg" # if avatar = true, must contain the path of the avatar in the static folder. 
     favicon_32 = "/images/favicon-32x32.png"
     favicon_16 = "/images/favicon-16x16.png"
 
